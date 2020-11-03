@@ -42,7 +42,7 @@ async def install(event):
                 path1 = Path(downloaded_file_name)
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
-                await event.edit("Prashad Userbot has Successfully Installed the Plugin `{}`".format(os.path.basename(downloaded_file_name)))
+                await event.edit("Userbot has Successfully Installed the Plugin `{}`".format(os.path.basename(downloaded_file_name)))
             else:
                 os.remove(downloaded_file_name)
                 await event.edit("Errors! This plugin is already installed/pre-installed.")
@@ -69,7 +69,7 @@ async def send(event):
     )
     end = datetime.now()
     time_taken_in_ms = (end - start).seconds
-    await event.edit("Prashad Userbot has Successfully Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
+    await event.edit("Userbot has Successfully Uploaded {} in {} seconds".format(input_str, time_taken_in_ms))
     await asyncio.sleep(DELETE_TIMEOUT)
     await event.delete()
 
@@ -80,9 +80,9 @@ async def unload(event):
     shortname = event.pattern_match["shortname"]
     try:
         remove_plugin(shortname)
-        await event.edit(f"Prashad Userbot has Successfully Unloaded {shortname} successfully")
+        await event.edit(f"Userbot has Successfully Unloaded {shortname} successfully")
     except Exception as e:
-        await event.edit("Prashad Userbot has Successfully unloaded {shortname}\n{}".format(shortname, str(e)))
+        await event.edit("Userbot has Successfully unloaded {shortname}\n{}".format(shortname, str(e)))
 
 @command(pattern="^.load (?P<shortname>\w+)$", outgoing=True)
 async def load(event):
@@ -95,6 +95,6 @@ async def load(event):
         except:
             pass
         load_module(shortname)
-        await event.edit(f"Prashad Userbot has Successfully loaded {shortname}")
+        await event.edit(f"Userbot has Successfully loaded {shortname}")
     except Exception as e:
-        await event.edit(f"Prashad Userbot Could not load {shortname} because of the following error.\n{str(e)}")
+        await event.edit(f"Userbot Could not load {shortname} because of the following error.\n{str(e)}")
