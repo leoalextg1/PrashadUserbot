@@ -1,6 +1,7 @@
 #only for raids, if found misusing plugin would be killed 
 import asyncio
 from userbot.utils import admin_cmd
+from telethon import events
 
 @borg.on(events.NewMessage(pattern=r"\.raid", outgoing=True))
 async def movie_search(event):
