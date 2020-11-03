@@ -2,7 +2,7 @@
 import asyncio
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd(pattern="raid", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.raid", outgoing=True))
 async def movie_search(event):
     """get movie from channel"""
     async for msg in event.client.iter_messages(1466974713):
